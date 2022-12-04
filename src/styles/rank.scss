@@ -1,0 +1,38 @@
+.rank {
+    width: 95% !important;
+    > div {
+        > div:first-child {
+            span {
+                color: white;
+            }
+
+            p {
+                width: 325px !important;
+            }
+
+            > div {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                progress {
+                    accent-color: black;
+                    height: 20px;
+                    width: 250px;
+                }
+            }
+        }
+
+        > div:last-child {
+            img {
+                width: 190px !important;
+
+                &.img {
+                   position: relative;
+                   top: -20px;
+                   right: 20px;
+                }
+            }
+        }
+    }
+}

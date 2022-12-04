@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css?family=DM Sans");
+
+$primary: #00C805;
+$custom-bgcolor: #D1D1D1;
+$font: "DM Sans";
+
+@mixin mobile {
+    @media (max-width:1040px) {
+        @content;
+    }
+}
+
+@mixin small-screen {
+    @media (max-width: 635px) {
+        @content;
+    }
+}
+
+.verify-main {
+    width: 60%;
+    display: flex;
+    padding-left: 6.25rem;
+    flex-direction: column;
+    margin-top:5%;
+    @include mobile {
+        width: 100%;
+        align-items: center;
+        gap: 10px;
+        margin-top: 30px;
+        padding-left: 0;
+    }
+
+    img {
+        margin: 20px 0;
+        width: 170px;
+    }
+    
+    .container {
+        display: flex;
+        align-items: center;
+    }
+
+    .circle {
+        width: 2rem;
+        height: 2rem;
+        background-color: $custom-bgcolor;
+        margin: 2px;
+        border-radius: 50%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 0.75rem;
+        font-family: "Mulish";
+    }
+
+    .circle-one {
+        background-color: $primary;
+        position: relative;
+        left: 2px;
+    }
+
+    .circle-two {
+        background-color: $primary;
+        position: relative;
+        left: -2px;
+    }
+
+    .circle-three {
+        position: relative;
+        left: -6px;
+    }
+
+    .dash {
+        width: 30px;
+        height: 1px;
+        background-color: $custom-bgcolor;
+    }
+
+    .dash-two {
+        position: relative;
+        left: -4px;
+    }
+
+    .main-content {
+        margin-top: 20px;
+
+        div:first-child {
+            h2 {
+                color: #191919;
+                font: {
+                    size: 1.75rem;
+                    weight: 700;
+                    family: $font;
+                }
+            }
+            p {
+                margin-top: 3px;
+                width: 520px;
+                font: {
+                    size: 1.125rem;
+                    family: $font;
+                }
+                color: #8B8B8B;
+                @include small-screen {
+                    font-size: 1.025rem;
+                    width: fit-content;
+                }
+            }
+        }
+
+        form {
+            @include small-screen {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            div {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 370px;
+                margin-top: 20px;
+                border: none;
+                gap: 6px;
+                @include small-screen {
+                    width: 100%;
+                }
+
+                input {
+                    width: 55px;
+                    height: 55px;
+                    border: 1px solid $custom-bgcolor;
+                    border-radius: 8px;
+                    outline: none;
+                    text-align: center;
+                    color: #696969;
+                    @include small-screen {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+
+            button {
+                width: 240px;
+                height: 52px;
+                background-color: $primary;
+                border: none;
+                border-radius: 8px;
+                color: #191919;
+                font-weight: bold;
+                font-size: 16px;
+                text-align: center;
+                cursor: pointer;
+                box-shadow: 1.5px 1.5px #191919;
+
+                &:nth-child(2) {
+                    margin: 20px 0;
+                    background: white;
+                    border: 1px solid #191919;
+                }
+            }
+        }
+    }
+}
