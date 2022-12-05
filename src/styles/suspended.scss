@@ -1,11 +1,11 @@
 @mixin mobile {
-    @media (max-width:806px) {
+    @media (max-width:560px) {
         @content;
     }
 }
 
 @mixin tablet {
-    @media (max-width:992px) {
+    @media (max-width:1020px) {
         @content;
     }
 }
@@ -17,14 +17,8 @@
     margin-bottom: 15px;
     color: #FFFFFF;
     position: relative;
-    @include tablet {
-        flex-direction: column;
-        height: 250px;
-    }
     @include mobile {
-        height: 300px;
-        flex-direction: column;
-        padding: 20px 0 20px 0;
+        height: 150px;
     }
 
    > div {
@@ -38,19 +32,25 @@
     background-position: center;
     object-fit: fill;
     padding: 40px;
+    @include mobile {
+        flex-direction: column;
+        text-align: center;
+    }
     > img {
         width: 200px;
         position: relative;
         bottom: -10px;
+        @include tablet {
+            display: none;
+        }
     }
 
     > div:first-child {
         display: flex;
         align-items: center;
         gap: 20px;
-        @include mobile {
-            flex-direction: column;
-            align-items: center;
+        @include tablet {
+            margin-left: -12px;
         }
 
         h3 {
@@ -63,18 +63,22 @@
             font-size: 14px;
             width: 350px;
             margin: 8px 0;
-            @include mobile {
-                width: 300px;
-            }
         }
 
         img {
             width: 40px;
             height: 40px;
+            @include mobile {
+                display: none;
+            }
         }
     }
 
     > div:last-child {
+        @include mobile {
+            width: 90%;
+        }
+
         button {
             background-color: #FFFFFF;
             color: #191919;
@@ -84,7 +88,7 @@
             cursor: pointer;
             box-shadow: 1.5px 1.5px #191919;
             @include mobile {
-                margin: 10px 0;
+                width: 100%;
             }
         }
     }

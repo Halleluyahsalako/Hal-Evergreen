@@ -3,8 +3,14 @@
 $font: "DM Sans";
 $primary: #00855D;
 
-@mixin mobile {
+@mixin tablet {
     @media (max-width:806px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width:550px) {
         @content;
     }
 }
@@ -19,115 +25,137 @@ $primary: #00855D;
     background: #FFFFFF;
     border: 1px solid #FAFAFA;
     font-family: $font;
-    @include mobile {
+    @include tablet {
         padding-top: 20px;
         position: relative;
         height: 170px;
         align-items: flex-start;
-        // z-index: -100;
+        padding-top: 50px;
     }
 
     .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 5px 35px;
-    }
+        width: 350px;
 
-    .user {
-        // padding-left: 10px;
-        display: flex;
-        align-items: center;
-        // gap: 5px;
-
-        > img:first-child {
+        .user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             @include mobile {
-                width: 40px;
+                gap: 2px;
             }
-        }
-
-        p {
-            color: $primary;
-            font: {
-                size: 14px;
-                weight: 400;
-            }
-        }
-
-        h3 {
-            font: {
-                size: 18px;
-                weight: 400;
-            }
-        }
-    }
     
-    h2 {
-        font-family: 'DM Sans';
-        font-weight: 700;
-        font-size: 20px;
-        color: #191919;
-        margin-left: 10px;
-        @include mobile {
-            font-size: 18px;
-            position: relative;
-            top: 10px;
+            > img:first-child {
+                @include tablet {
+                    width: 40px;
+                }
+            }
+    
+            p {
+                color: $primary;
+                font: {
+                    size: 14px;
+                    weight: 400;
+                }
+            }
+    
+            h3 {
+                font: {
+                    size: 18px;
+                    weight: 400;
+                }
+            }
+        }
+
+        .wallet {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 8px 20px;
+            gap: 16px;
+            width: 181px;
+            height: 60px;
+            background: #FAFAFA;
+            border-radius: 8px;
+            @include mobile {
+                width: 123px;
+                position: relative;
+                left: 15px;
+                gap: 0px;
+                padding: 8px 10px;
+            }
+    
+            img {
+                @include tablet {
+                    width: 30px;
+                }
+
+                &:first-child {
+                    margin-right: 3px;
+                }
+                
+                &:last-child {
+                    @include mobile {
+                        width: 20px;
+                    }
+                }
+            }
+    
+            p {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 16px;
+                letter-spacing: 0.1px;
+                color: #8B8B8B;
+                @include tablet {
+                    font-size: 12px;
+                }
+            }
+    
+            h3 {
+                width: 54px;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 26px;
+                color: #191919;
+                @include tablet {
+                    font-size: 16px;
+                }
+            }
         }
     }
 
-    .wallet {
+    .menu {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 8px 20px;
-        gap: 16px;
-        width: 181px;
-        height: 60px;
-        background: #FAFAFA;
-        border-radius: 8px;
-        @include mobile {
-            width: 140px;
-            position: absolute;
-            left: calc(50% - 50px);
-            bottom: 10px;
-            padding: 35px 16px;
-        }
+        gap: 10px;
+        margin-left: 10px;
+        margin-top: 5px;
 
-        img {
-            @include mobile {
-                width: 30px;
-            }
-        }
-
-        p {
-            font-style: normal;
-            font-weight: 400;
-            font-size: 13px;
-            line-height: 16px;
-            letter-spacing: 0.1px;
-            color: #8B8B8B;
-            @include mobile {
-                font-size: 12px;
-            }
-        }
-
-        h3 {
-            width: 54px;
-            font-style: normal;
+        h2 {
+            font-family: 'DM Sans';
             font-weight: 700;
             font-size: 20px;
-            line-height: 26px;
             color: #191919;
+            margin-left: 10px;
+            @include tablet {
+                font-size: 18px;
+                position: relative;
+                top: 10px;
+            }
             @include mobile {
-                font-size: 16px;
+                display: none;
+            }
+        }
+
+        .icon {
+            display: none;
+            @include tablet {
+                display: block;
             }
         }
     }
-
-   .menu {
-    display: none;
-    @include mobile {
-        display: block;
-    }
-   }
 }
