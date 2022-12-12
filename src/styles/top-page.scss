@@ -1,0 +1,19 @@
+.top-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 10px;
+
+    h2 {
+        font-weight: 700;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 18px;
+    }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/nav.scss";
-import logo from "../assets/home-logo.png";
-import logoM from "../assets/ever2 1.png";
+import logo from "../assets/ever15 1.png";
+import logoM from "../assets/ever10.png";
 import { Link, useMatch, useNavigate, useResolvedPath } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useRef } from "react";
@@ -17,7 +17,7 @@ const CustomLink = ({to, text}) => {
 function Nav() {
 
     const navigate = useNavigate();
-    const ul = useRef();
+    const ul = useRef("");
 
     const hide = () => {
         if (window.innerWidth <= 980) {
@@ -37,9 +37,9 @@ function Nav() {
                 <FaTimes onClick={hide} className="times" size={30} />
                 <CustomLink to="/" text="Home" />
                 <CustomLink to="/about" text="About" />
-                <CustomLink to="/contact" text="Contact" />
+                <a href="#contact">Contact</a>
                 <CustomLink to="/faqs" text="FAQs" />
-                <CustomLink to="t&c" text="T&Cs" />
+                <CustomLink to="/terms" text="T&Cs" />
                 <CustomLink to="/privacy" text="Privacy" />
             </ul>
             <div onClick={show}>
