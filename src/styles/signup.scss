@@ -33,8 +33,9 @@ $font: "DM Sans";
     margin-top: 5%;
 
     img {
-        margin: 1.25rem 0;
-        width: 10.625rem;
+        margin: 20px 0;
+        margin-left: -30px;
+        width: 200px;
     }
     
     .container {
@@ -166,7 +167,9 @@ $font: "DM Sans";
             text-align: center;
             margin: 20px 0;
             cursor: pointer;
-            box-shadow: 1.5px 1.5px #191919;
+            border-width: .5px 2px 2px .5px;
+            border-style: solid;
+            border-color: black;
         }
     }
 
